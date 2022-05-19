@@ -1,0 +1,37 @@
+<div class="container-fluid">
+  <div class = row>
+    <div class="col-6">
+      <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Number of Members</th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let banda of bandas">
+            <td>
+              <dd>{{banda.id}}</dd>
+            </td>
+            <td>
+              <dd><a href = "#" (click)="onSelected(banda)">{{banda.name}}</a></dd>
+            </td>
+            <td>
+              <dd>{{banda.numberOfMembers}}</dd>
+            </td>
+          </tr>
+          <td colspan="6">Average number of members (rounded up):
+            {{average}}</td>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-5" style="background-color:rgb(255, 255, 255);">
+      <div class="card" style="width: 18rem;">
+        <div *ngIf = "selected">
+          <app-Banda-detail [banda]="selectedBanda"></app-Banda-detail>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

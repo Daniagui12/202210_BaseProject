@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class = row>
     <div class="col-6">
-      <table class="table">
+      <table class="table table-hover">
         <thead class="thead-dark">
             <tr>
                 <th>Id</th>
@@ -10,12 +10,12 @@
             </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let banda of bandas">
+          <tr *ngFor="let banda of bandas" (click)="onSelected(banda)">
             <td>
               <dd>{{banda.id}}</dd>
             </td>
             <td>
-              <dd><a href = "#" (click)="onSelected(banda)">{{banda.name}}</a></dd>
+              <dd>{{banda.name}}</dd>
             </td>
             <td>
               <dd>{{banda.numberOfMembers}}</dd>
